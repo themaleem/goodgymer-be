@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_09_194540) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_10_003019) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +47,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_194540) do
     t.bigint "registration_limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.string "address"
+    t.time "start_time"
+    t.text "description"
     t.index ["created_by"], name: "index_sessions_on_created_by"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
     t.index ["session_type"], name: "index_sessions_on_session_type"
   end
 

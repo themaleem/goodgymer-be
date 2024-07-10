@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   }
 
   resources :goodgymers, only: %i[index create]
+  resources :registrations, only: %i[create destroy]
+  resources :sessions, only: %i[index create destroy]
 
   resources :users, only: %i[] do
     collection do

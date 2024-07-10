@@ -27,5 +27,7 @@ class Goodgymer < ActiveRecord::Base
 
   def dbs_verified?
     # @todo some dbs checking logic
+    true
+    # false
   end
 end
